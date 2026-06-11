@@ -8,8 +8,7 @@ CFLAGS = -march=rv64gc -mabi=lp64 \
          -fno-stack-protector \
          -Wall -Iinclude
 
-OBJS = start.o trap_entry.o context.o \
-       main.o task.o scheduler.o uart.o string.o memory.o
+OBJS = start.o trap_entry.o context.o main.o uart.o memory.o task.o scheduler.o trap.o timer.o // <-- LINHA MODIFICADA
 
 all:
 	$(CROSS)gcc $(CFLAGS) -c boot/start.S
